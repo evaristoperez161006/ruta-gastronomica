@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-registro </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <BR></BR>
+    <p></p><br>
+    <p></p><br>
+  
+
+    <center>
+        <div class="container">
+        <h2>PRE-REGISTRO RG</h2>
+        <form action="process.php" method="POST">
+            <div class="form-group">
+                <label for="user_type">Tipo de Usuario:</label>
+                <select id="user_type" name="user_type" required>
+                    <option value="">Selecciona un tipo</option>
+                    <option value="alumno">Alumno</option>
+                    <option value="administrativo">Administrativo</option>
+                    <option value="profesor">Profesor</option>
+                    <option value="externo">Externo</option>
+                </select>
+            </div>
+
+            <div id="alumno_fields" class="user-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="alumno_nombres">Nombres:</label>
+                    <input type="text" id="alumno_nombres" name="alumno_nombres">
+                </div>
+                <div class="form-group">
+                    <label for="alumno_apellidos">Apellidos:</label>
+                    <input type="text" id="alumno_apellidos" name="alumno_apellidos">
+                </div>
+                <div class="form-group">
+                    <label for="alumno_matricula">Matrícula:</label>
+                    <input type="text" id="alumno_matricula" name="alumno_matricula">
+                </div>
+            </div>
+
+            <div id="administrativo_fields" class="user-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="admin_nombres">Nombres:</label>
+                    <input type="text" id="admin_nombres" name="admin_nombres">
+                </div>
+                <div class="form-group">
+                    <label for="admin_apellidos">Apellidos:</label>
+                    <input type="text" id="admin_apellidos" name="admin_apellidos">
+                </div>
+                <div class="form-group">
+                    <label for="admin_area">Área:</label>
+                    <input type="text" id="admin_area" name="admin_area">
+                </div>
+            </div>
+
+            <div id="profesor_fields" class="user-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="profesor_nombres">Nombres:</label>
+                    <input type="text" id="profesor_nombres" name="profesor_nombres">
+                </div>
+                <div class="form-group">
+                    <label for="profesor_apellidos">Apellidos:</label>
+                    <input type="text" id="profesor_apellidos" name="profesor_apellidos">
+                </div>
+                <div class="form-group">
+                    <label for="profesor_modulo">Módulo que Imparte:</label>
+                    <input type="text" id="profesor_modulo" name="profesor_modulo">
+                </div>
+            </div>
+
+            <div id="externo_fields" class="user-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="externo_nombres">Nombres:</label>
+                    <input type="text" id="externo_nombres" name="externo_nombres">
+                </div>
+                <div class="form-group">
+                    <label for="externo_apellidos">Apellidos:</label>
+                    <input type="text" id="externo_apellidos" name="externo_apellidos">
+                </div>
+            </div>
+
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+    </center>
+
+    <script>
+        document.getElementById('user_type').addEventListener('change', function() {
+            var userType = this.value;
+            var fields = document.querySelectorAll('.user-fields');
+            fields.forEach(function(field) {
+                field.style.display = 'none'; // Hide all fields first
+            });
+
+            // Show fields based on selected user type
+            if (userType === 'alumno') {
+                document.getElementById('alumno_fields').style.display = 'block';
+                // Make required fields truly required only when shown
+                document.getElementById('alumno_nombres').setAttribute('required', 'required');
+                document.getElementById('alumno_apellidos').setAttribute('required', 'required');
+                document.getElementById('alumno_matricula').setAttribute('required', 'required');
+            } else {
+                // Remove required attribute if not alumno
+                document.getElementById('alumno_nombres').removeAttribute('required');
+                document.getElementById('alumno_apellidos').removeAttribute('required');
+                document.getElementById('alumno_matricula').removeAttribute('required');
+            }
+
+            if (userType === 'administrativo') {
+                document.getElementById('administrativo_fields').style.display = 'block';
+                document.getElementById('admin_nombres').setAttribute('required', 'required');
+                document.getElementById('admin_apellidos').setAttribute('required', 'required');
+                document.getElementById('admin_area').setAttribute('required', 'required');
+            } else {
+                document.getElementById('admin_nombres').removeAttribute('required');
+                document.getElementById('admin_apellidos').removeAttribute('required');
+                document.getElementById('admin_area').removeAttribute('required');
+            }
+
+            if (userType === 'profesor') {
+                document.getElementById('profesor_fields').style.display = 'block';
+                document.getElementById('profesor_nombres').setAttribute('required', 'required');
+                document.getElementById('profesor_apellidos').setAttribute('required', 'required');
+                document.getElementById('profesor_modulo').setAttribute('required', 'required');
+            } else {
+                document.getElementById('profesor_nombres').removeAttribute('required');
+                document.getElementById('profesor_apellidos').removeAttribute('required');
+                document.getElementById('profesor_modulo').removeAttribute('required');
+            }
+
+            if (userType === 'externo') {
+                document.getElementById('externo_fields').style.display = 'block';
+                document.getElementById('externo_nombres').setAttribute('required', 'required');
+                document.getElementById('externo_apellidos').setAttribute('required', 'required');
+            } else {
+                document.getElementById('externo_nombres').removeAttribute('required');
+                document.getElementById('externo_apellidos').removeAttribute('required');
+            }
+        });
+    </script>
+</body>
+</html>

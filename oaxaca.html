@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oaxaca, México</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      background-image: url(turisoaxaca.jpg); /* Imagen de fondo */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.85);
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #f9c74f;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      flex: 1 1 350px;
+      background-color: rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 25px;
+      border-left: 5px solid #f9c74f;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      color: #f9c74f;
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+
+    .card i {
+      margin-right: 10px;
+    }
+
+    .card p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #eee;
+    }
+
+    .regresar-btn {
+      display: block;
+      text-align: center;
+      margin: 60px auto 0;
+      padding: 14px 30px;
+      background-color: #d62828;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 50px;
+      font-weight: bold;
+      width: fit-content;
+      transition: background-color 0.3s ease;
+    }
+
+    .regresar-btn:hover {
+      background-color: #bb2323;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <h1>Oaxaca, Joya Cultural de México</h1>
+      <p>Descubre la magia de sus sabores, colores y tradiciones</p>
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <h2><i class="fas fa-pepper-hot"></i> Gastronomía</h2>
+        <p>Oaxaca es la cuna del mole, con más de siete variedades tradicionales. También destacan el tasajo, las tlayudas, el queso oaxaqueño y los chapulines. Su cocina es un reflejo de la fusión entre lo prehispánico y lo colonial.</p>
+      </div>
+
+      <div class="card">
+        <h2><i class="fas fa-hand-holding-heart"></i> Artesanías</h2>
+        <p>Las manos oaxaqueñas crean maravillas como textiles de telar de cintura, alebrijes, barro negro, y joyería de filigrana. Pueblos como Teotitlán del Valle y San Bartolo Coyotepec son reconocidos por su excelencia artesanal.</p>
+      </div>
+
+      <div class="card">
+        <h2><i class="fas fa-map-signs"></i> Lugares Turísticos</h2>
+        <p>Desde Monte Albán, una ciudad zapoteca milenaria, hasta Hierve el Agua con sus cascadas petrificadas, Oaxaca ofrece historia y paisajes únicos. No te pierdas el Templo de Santo Domingo ni el vibrante Zócalo capitalino.</p>
+      </div>
+
+      <div class="card">
+        <h2><i class="fas fa-glass-cheers"></i> Festividades</h2>
+        <p>La Guelaguetza es la celebración cultural más grande, donde comunidades indígenas muestran su música, danza y vestimenta. También destacan el Día de Muertos y la Noche de Rábanos, eventos llenos de tradición y color.</p>
+      </div>
+    </div>
+
+    <a href="rutagastronmica.html" class="regresar-btn"><i class="fas fa-arrow-left"></i> Regresar</a>
+  </div>
+</body>
+</html>

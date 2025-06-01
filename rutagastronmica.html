@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Rutas Gastronómicas</title>
+  <style>
+    /* Estilos generales del cuerpo del sitio */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-size: cover; /* La imagen de fondo se ajusta sin deformarse */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* El fondo se queda fijo al hacer scroll */
+  transition: background-image 1s ease-in-out; /* Transición suave al cambiar fondo */
+}
+
+/* Barra de navegación */
+nav {
+  background-color: #000000; /* Fondo oscuro */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Enlaces del menú de navegación */
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  margin: 10px;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre los enlaces del nav */
+nav a:hover {
+  transform: scale(1.2); /* Aumenta el tamaño */
+  color: #fff9f9; /* Color más claro */
+}
+
+/* Secciones generales */
+section {
+  padding: 20px;
+}
+
+/* Distribución en dos columnas para menús y contacto */
+.menu, .contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Tarjetas de menú y contacto */
+.menu div, .contact div {
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(42, 75, 114, 0.1);
+  color: white;
+}
+
+/* Imágenes dentro de menú y contacto */
+.menu img, .contact img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Títulos de nivel 2 */
+h2 {
+  color: #ffffff;
+}
+
+/* Pie de página */
+footer {
+  background-color: #000000;
+  color: rgb(255, 239, 239);
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Enlaces del pie de página */
+footer a {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+/* Botón de registro */
+.boton-registro {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 16px;
+  color: white;
+  background-color: #ff7b00;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en botón de registro */
+.boton-registro:hover {
+  background-color: #00b300;
+}
+
+/* Texto destacado con estilo llamativo */
+.texto-destacado {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 12px 30px;
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: palpitar 1.6s infinite ease-in-out;
+}
+
+/* Animación para el texto destacado */
+@keyframes palpitar {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+/* Sección con diseño elegante */
+.seccion-elegante {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #07102b;
+  padding: 40px 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Imágenes decorativas laterales */
+.imagen-lateral {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de íconos sociales */
+.social-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Íconos de redes sociales */
+.social-icon {
+  background: rgb(97, 93, 93);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: #020202;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover para los íconos */
+.social-icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(134, 63, 63, 0.2);
+}
+
+/* Colores personalizados por red social */
+.facebook { color: #3b5998; }
+.tiktok { color: #ffffff; }
+.instagram { color: #e4405f; }
+.whatsapp { color: #1e8d50; }
+header {
+  background: linear-gradient(to right, #284f69, #020b35); /* Gradiente atractivo */
+  padding: 40px 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3); /* Sombra debajo */
+}
+/*estilo de estados*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  gap: 40px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  width: 600px;
+  height: 320px;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.4s ease;
+}
+
+/* Imagen ocupa 100% al inicio */
+.card .imgBx {
+  flex: 1;
+  max-width: 100%;
+  transition: flex 0.3s ease;
+  overflow: hidden;
+}
+
+.card .imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenido */
+.card .content {
+  flex: 0;
+  opacity: 0;
+  padding: 30px;
+  color: #fff;
+  transition: flex 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+/* Al pasar el mouse, se "abre" la carta */
+.card:hover .imgBx {
+  flex: 0 0 40%; /* se reduce la imagen al 40% del ancho */
+}
+
+.card:hover .content {
+  flex: 1;
+  opacity: 1;
+}
+
+.typewriter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+
+  .typewriter-text {
+    color: #ffddc1;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #ffddc1;
+    animation: typing 7s steps(80, end), blink 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  </style>
+</head>
+
+<body>
+  <header>
+    <section class="seccion-elegante">
+      <img src="logo409.jpg" alt="Imagen izquierda" class="imagen-lateral">
+      <div class="texto-destacado">RUTAS GASTRONÓMICAS</div>
+      <img src="logo409.jpg" alt="Imagen derecha" class="imagen-lateral">
+    </section>
+  </header>
+
+  <nav>
+    <a href="#Estados"><b>ESTADOS</b></a>
+    <a href="#evento"><b>EVENTO</b></a>
+    <a href="#pre-registro"><b>PRE-REGISTRO</b></a>
+    <a href="#contacto"><b>CONTACTO</b></a>
+    </nav>
+
+  <hr>
+  <section id="Estados">
+    <div class="texto-destacado"><center>ESTADOS</center></div>
+    <div class="container">
+    <div class="card">
+      <div class="imgBx">
+        <img src="cdmx.jpeg" alt="cdmx">
+      </div>
+      <div class="content">
+        <h2>Ciudad de México</h2>
+       <b> <p>La Ciudad de México es un cristol de sabores y tradiciones. Su gastronomía es una explosión 
+            de colores y sabores. Y no solo la comida es una delicia, también las artesanías que se pueden
+            encontrar en mercados donde se puede admirar hermosas piezas de arte popular.</p>
+            <p><a href="cdmx.html">Ver detalles</a></p>      </b>
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="oaxaca.jpeg" alt="oaxaca">
+      </div>
+      <div class="content">
+        <h2>Oaxaca</h2>
+        <b>
+          <p>Es un estado ubicado al sur de México, conocido por su rica diversidad
+            cultural y natural. Es un destino popular para aquellos interesados en explotar la herencia indígena
+            y la belleza natural de México.
+        </p>
+        <p><a href="oaxaca.html">Ver detalles</a></p>
+        </b>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="chiapas.jpeg" alt="chiapas">
+      </div>
+      <div class="content">
+       <b>
+         <h2>Chiapas</h2>
+        <p>Es un estado ubicado en el sureste de México, conocido por su rica biodiversidad 
+             y patrimonio cultural. La economía se basa en la agricultura, el turismo y la 
+            producción de energía hidroeléctrica. También es conocido por sus sitios arqueológicos
+            mayas.</p>
+         <p><a href="chiapas.html">Ver detalles</a></p>
+       </b>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="veracruz.jpeg" alt="veracruz">
+      </div>
+      <div class="content">
+        <b><h2>Veracruz</h2>
+        <p>Es un estado ubicado en la costa del Golfo de México, conocido por su rica historia, cultura 
+        y biodiversidad. es un importante centro económico y cultural del país. La entidad cuenta con una gran variedad 
+        de ecosistemas, desde selvas tropicales hasta montañas y costas, siendo hogar de varias especies endémicas.
+        </p>
+        <p><a href="veracruz.html">Ver detalles</a></p></b>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="imgBx">
+        <img src="guadalajara.jpeg" alt="guadalajara">
+      </div>
+      <div class="content">
+        <b><h2>Guadalajara</h2>
+        <b><p>Capital del estado del Jalisco, que se encuentra
+          en el oeste del país. Conocido por su rica cultura, historia 
+          y tradiciones, y es famoso por ser el lugar de origen del mariachi,
+          la charrería y el tequila.</p></b>
+          <p><a href="guadalajara.html">Ver detalles</a></p></b>
+      </div>
+    </div>
+  </div>
+  </section>
+
+ <div class=texto-destacado>RUTAS GASTRONÓMICAS</div>
+ <section id="evento" style="background: url('https://images.unsplash.com/photo-1582459282403-2ee9dc401fa1?auto=format&fit=crop&w=1600&q=80') no-repeat center center / cover; padding: 10px 20px;">
+  <div style="backdrop-filter: blur(10px); background-color: rgba(107, 107, 107, 0.5); border-radius: 15px; padding: 40px 30px; max-width: 500px; margin: 0 auto; color: white; font-family: 'Segoe UI', sans-serif; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+
+   
+
+    <!-- Texto animado desplazándose -->
+    <div class="typewriter-container">
+  <div class="typewriter-text">
+    ¡Conoce nuestro evento gastronómico el 11 de junio con los sabores de México! ¡No te lo pierdas!
+  </div>
+</div>
+
+    <style>
+      @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+    </style>
+      <p>
+      Te invitamos cordialmente a un evento especial donde exploraremos la riqueza culinaria de cinco estados mexicanos.
+      Este recorrido te permitirá descubrir sus platillos típicos, costumbres y destinos turísticos más atractivos.
+    </p>
+
+   
+
+    <ul style="max-width: 500px; margin: 0 auto 30px; font-size: 18px; list-style: none; padding-left: 0; ">
+      <li>🌿 Chiapas</li>
+      <li>🌊 Veracruz</li>
+      <li>🏙️ Ciudad de México (CDMX)</li>
+      <li>🧀 Oaxaca</li>
+      <li>🎉 Guadalajara (Jalisco)</li>
+    </ul>
+     <p style=" font-size: 18px; max-width: 800px; margin: 0 auto 20px;">
+      📍 <strong>Ubicación:</strong> CONALEP Nezahualcóyotl III. Calle San Bartolo No. 149, Col. Ampliación Vicente Villada, Ciudad Nezahualcóyotl, Estado de México, C.P. 57760<br>
+      🕐 <strong>Hora:</strong> De 1:00 p.m. a 3:00 p.m.<br>
+      📅 <strong>Fecha:</strong> 11 de junio del 2025
+    </p>
+
+    <p style=" font-size: 17px; max-width: 700px; margin: 0 auto 30px;">
+      Degustaciones, folletos culturales y destinos por descubrir.  
+      <br><strong>¡Vive una experiencia llena de sabor, cultura y tradición!</strong>
+    </p>
+
+    <div style="margin-top: 30px; text-align: center;">
+  <a href="invitacion.jpg" download>
+    <img src="invitacion.jpg" alt="CONALEP III" style="max-width: 70%; height: auto;">
+  </a>
+</div>
+
+  </div>
+</section>
+
+
+  <hr>
+
+  <section id="pre-registro">
+    <div class="texto-destacado"><center>PRE-REGISTRO</center></div>
+  
+    <font color=white><center><b><p>¡Regístrate ahora, no te pierdas el evento!</p></b></center></font>
+    <center>  <a href="registro.html" target="_blank" class="boton-registro">Regístrate</a></center>
+  </section>
+
+  <hr>
+
+  <section id="contacto">
+  
+  <div class="contact">
+    <div>
+      <h3>Dirección</h3>
+      <p>Calle San Bartolo No. 149, Col. Ampliación Vicente Villada, Ciudad Nezahualcóyotl, Estado de México, C.P. 57760</p>
+    </div>
+
+    <div>
+      <h3>Síguenos en Redes Sociales</h3>
+     <div class="social-container">
+  <a href="https://www.facebook.com/CEMNEZAIII?locale=es_LA" target="_blank" class="social-icon facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  
+  <a href="https://www.tiktok.com/@conalep.neza3" target="_blank" class="social-icon tiktok">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  
+  <a href="https://www.instagram.com/conalep_neza3/" target="_blank" class="social-icon instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  
+  <a href="https://api.whatsapp.com/send?phone=5215532737499&text=Hola%20me%20interesa%20el%20evento" target="_blank" class="social-icon whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Restaurante Delicioso. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const images = [
+      "https://blog.vivaaerobus.com/wp-content/uploads/2020/03/Lugares-para-visitar-en-CDMX.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-s/16/8f/c8/bf/zocalo-van-veracruz.jpg",
+      "https://media.cnn.com/api/v1/images/stellar/prod/cnne-871608-catedral-gdl-001.jpg?q=w_1110,c_fill",
+      "https://i0.wp.com/www.sinpostal.com/wp-content/uploads/2018/12/ArcodelTiempo-SinPostal-3.jpg?fit=1000%2C668&ssl=1",
+      "https://tipsparavacacionar.com/wp/wp-content/uploads/2018/11/oaxaca-y-sus-playas_oaxaca-centro.jpg"
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+      document.body.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }
+
+    changeBackground(); // Mostrar una al cargar
+    setInterval(changeBackground, 3000); // Cambiar cada 3 segundos
+  </script>
+</body>
+</html>

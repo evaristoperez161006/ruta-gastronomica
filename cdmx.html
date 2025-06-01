@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ciudad de México</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #f0f0f0;
+      background-image: url(torre.jpg); /* Imagen de fondo */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+
+    h1, h2 {
+      font-family: 'Merriweather', serif;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-left: 5px solid #004586;
+      padding: 30px 25px;
+      border-radius: 8px;
+    }
+
+    .section i {
+      color: #868686;
+      margin-right: 10px;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin: 15px 0 0 0;
+    }
+
+    .button-regreso {
+      display: inline-block;
+      margin: 50px auto 0;
+      padding: 14px 28px;
+      background-color: #000000;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+      display: block;
+      text-align: center;
+      max-width: 200px;
+    }
+
+    .button-regreso:hover {
+      background-color: #38662c;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .section {
+        margin: 30px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Descubre la Ciudad de México</h1>
+
+    <div class="section">
+      <h2><i class="fas fa-utensils"></i> Gastronomía</h2>
+      <p>La Ciudad de México ofrece una experiencia gastronómica única. Desde los famosos tacos al pastor hasta el exquisito mole poblano, la capital es un verdadero festín de sabores. Visita mercados como San Juan o Coyoacán para degustar la auténtica cocina mexicana.</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-hand-sparkles"></i> Artesanías</h2>
+      <p>La riqueza cultural se refleja en sus artesanías: textiles tradicionales, cerámica pintada a mano, alebrijes coloridos y joyería indígena. Espacios como el Mercado de La Ciudadela te permitirán apreciar el trabajo de artesanos de todo el país.</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-map-marked-alt"></i> Lugares Turísticos</h2>
+      <p>Desde el histórico Zócalo hasta los tranquilos canales de Xochimilco, la Ciudad de México combina historia, arte y naturaleza. Otros sitios imperdibles son el Palacio de Bellas Artes, el Castillo de Chapultepec y las zonas arqueológicas como Teotihuacán.</p>
+    </div>
+
+    <a href="rutagastronmica.html" class="button-regreso">
+      <i class="fas fa-arrow-left"></i> Regresar
+    </a>
+  </div>
+</body>
+</html>

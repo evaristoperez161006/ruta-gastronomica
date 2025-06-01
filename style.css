@@ -1,0 +1,123 @@
+
+
+body {
+    background-image: url(logo409.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: moverFondo 30s linear infinite;
+    
+}
+@keyframes moverFondo {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 30px;
+    
+    background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px);         /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad Safari */
+    
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde tenue */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);   /* Sombra suave */
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff; /* A nice greenish-blue for headings */
+    margin-bottom: 30px;
+    font-size: 2em;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #7ab8b2; /* Complementary color */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+select {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 12px 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #7ab8b2;
+    box-shadow: 0 0 0 3px rgba(122, 184, 178, 0.3); /* Subtle focus glow */
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #3b5a5c;
+    color: #ffffff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+
+    animation: latido 2s infinite ease-in-out;
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+}
+
+
+button[type="submit"]:hover {
+    background-color: #0fad44;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.user-fields {
+    border-top: 1px dashed #e0e0e0; /* Separator for dynamic fields */
+    padding-top: 20px;
+    margin-top: 20px;
+}
